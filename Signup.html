@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up Page</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(lightblue, white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .signup-box {
+      background: white;
+      padding: 25px;
+      width: 320px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      text-align: center;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 95%;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .success {
+      color: blue;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-box">
+    <h2>Create Account</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="password" id="password" placeholder="Enter Password">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function signup() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let confirmPassword = document.getElementById("confirmPassword").value;
+      let message = document.getElementById("message");
+
+      if (name === "" || email === "" || password === "" || confirmPassword === "") {
+        message.innerHTML = "Please fill all fields!";
+        message.className = "error";
+      }
+      else if (password !== confirmPassword) {
+        message.innerHTML = "Passwords do not match!";
+        message.className = "error";
+      }
+      else {
+        message.innerHTML = "Account Created Successfully!";
+        message.className = "success";
+      }
+    }
+  </script>
+
+</body>
+</html>

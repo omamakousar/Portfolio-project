@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    /* Header */
+    .header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    /* Contact form box */
+    .form-box {
+      background-color: white;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    button {
+      background-color:blue;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color:blue;
+    }
+
+    /* Contact info box */
+    .info-box {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+
+    .info-box h3 {
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    Contact Us
+  </div>
+
+  <div class="container">
+
+    <!-- Contact Form -->
+    <div class="form-box">
+      <h3>Send Us a Message</h3>
+
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email">
+
+        <label>Subject</label>
+        <input type="text" placeholder="Enter subject">
+
+        <label>Message</label>
+        <textarea placeholder="Write your message here..."></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="info-box">
+      <h3>Contact Information</h3>
+      <p><b>Email:</b> support@yourwebsite.com</p>
+      <p><b>Phone:</b> +92 300 1234567</p>
+      <p><b>Address:</b> Karachi, Pakistan</p>
+
+      <h3>Working Hours</h3>
+      <p>Monday - Friday: 9AM - 6PM</p>
+      <p>Saturday: 10AM - 2PM</p>
+      <p>Sunday: Closed</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
