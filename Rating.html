@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ratings & Reviews</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      font-size: 28px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .box {
+      background: white;
+      width: 350px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 95%;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: darkorange;
+    }
+
+    .stars {
+      font-size: 22px;
+      cursor: pointer;
+      color: lightgray;
+    }
+
+    .stars span.active {
+      color: gold;
+    }
+
+    .review {
+      text-align: left;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    .learn {
+      background-color: blue;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    Ratings & Reviews
+  </div>
+
+  <div class="container">
+
+    <!-- Rating Form -->
+    <div class="box">
+      <h3>Give Your Rating</h3>
+
+      <div class="stars" id="starContainer">
+        <span onclick="rate(1)">★</span>
+        <span onclick="rate(2)">★</span>
+        <span onclick="rate(3)">★</span>
+        <span onclick="rate(4)">★</span>
+        <span onclick="rate(5)">★</span>
+      </div>
+
+      <input type="text" placeholder="Your Name">
+      <textarea placeholder="Write your review..."></textarea>
+
+      <button onclick="submitReview()">Submit Review</button>
+
+      <button class="learn">Learn More</button>
+    </div>
+
+    <!-- Reviews Display -->
+    <div class="box">
+      <h3>Customer Reviews</h3>
+
+      <div class="review">
+        <p>⭐⭐⭐⭐⭐</p>
+        <b>Ali</b>
+        <p>Great product! I really liked it.</p>
+      </div>
+
+      <div class="review">
+        <p>⭐⭐⭐⭐</p>
+        <b>Sara</b>
+        <p>Good quality but delivery was late.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    let selectedRating = 0;
+
+    function rate(star) {
+      selectedRating = star;
+      let stars = document.querySelectorAll("#starContainer span");
+
+      stars.forEach((s, index) => {
+        if (index < star) {
+          s.classList.add("active");
+        } else {
+          s.classList.remove("active");
+        }
+      });
+    }
+
+    function submitReview() {
+      alert("Review Submitted! Rating: " + selectedRating);
+    }
+  </script>
+
+</body>
+</html>
